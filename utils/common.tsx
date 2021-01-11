@@ -89,7 +89,32 @@ const LoaderIcon = () => (
   </div>
 );
 
+const DiscountBox = ({ discountPer, discount, amtWithDis, amtWithoutDis }) => (
+	<div className='flex flex-wrap text-center'>
+		{discount && (
+			<>
+				<span
+					className='text-red-800 md:bg-red-700 md:rounded-full p-2 text-xs md:text-white md:mr-2 h-8'
+					dangerouslySetInnerHTML={{ __html: `${discountPer} % Off` }}
+				/>
+				<p
+					className='line-through float-left text-gray-700 md:border-l mt-2 pt-0 p-2'
+					dangerouslySetInnerHTML={{ __html: amtWithoutDis }}
+				/>
+			</>
+		)}
+		<p
+			className={`md:text-2xl mt-2 font-extrabold text-blue-700 ${discount &&
+				'md:border-l pl-2 md:mt-0'}`}
+			dangerouslySetInnerHTML={{
+				__html: discount ? amtWithDis : amtWithoutDis
+			}}
+		/>
+	</div>
+);
+
 export {
+  DiscountBox,
   LoaderIcon,
   InputField,
   getDiscountPer,

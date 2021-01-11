@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 interface props {
-	type: string;
+	type?: string;
 	title: string;
 	message: string;
 }
