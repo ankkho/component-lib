@@ -1,3 +1,4 @@
+import React from 'react';
 import { getDiscountPer, DiscountBox } from '../../../utils/common';
 
 interface variations {
@@ -11,6 +12,7 @@ interface props {
 	key?: string;
 	details: {
 		slug: string;
+		name: string;
 		onSale: boolean;
 		productId?: number;
 		reviewCount: number;
@@ -24,7 +26,7 @@ interface props {
 	};
 }
 
-const ItemCardDetails = ({ key, details }) => {
+const ItemCard: React.FC<props> = ({ key, details }) => {
 	const {
 		slug,
 		name,
@@ -32,21 +34,21 @@ const ItemCardDetails = ({ key, details }) => {
 		reviewCount,
 		image: { mediaItemUrl, altText },
 		averageRating,
-		variations
+		variations,
 	} = details;
 
-	const saleDetails = variations.nodes.filter((val) => {
+	const saleDetails = variations.filter((val) => {
 		const { onSale } = val;
 		if (onSale) return val;
 	});
-	const nonSaleDetails = variations.nodes[0];
+	const nonSaleDetails = variations[0];
 	const priceDetails = saleDetails.length ? saleDetails[0] : nonSaleDetails;
 
 	const { salePrice, regularPrice } = priceDetails
 		? priceDetails
-		: { salePrice: '', regularPrice: '' };
+		: { salePrice: 0, regularPrice: 0 };
 
-	const discountPer = getDiscountPer({ salePrice, regularPrice });
+	const discountPer = getDiscountPer(salePrice, regularPrice);
 
 	const itemSelected = () => {
 		window.location.href = `/${slug}`;
@@ -73,9 +75,5 @@ const ItemCardDetails = ({ key, details }) => {
 		</div>
 	);
 };
-
-const ItemCard: React.SFC<props> = ({ key, details }) => (
-	<ItemCardDetails key={key} details={details} />
-);
 
 export default ItemCard;
