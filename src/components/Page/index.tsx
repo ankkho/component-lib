@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 
 import { LoaderIcon } from '../../../utils/common';
-import config from '../../../config';
+import config from '../../config.json';
 import Header from '../Header';
 
 const { siteName, url } = config;
@@ -42,23 +42,23 @@ const Page = (props: React.PropsWithChildren<Props>) => {
 							url: 'https://www.example.ie/og-image-01.jpg',
 							width: 800,
 							height: 600,
-							alt: 'Og Image Alt'
+							alt: 'Og Image Alt',
 						},
 						{
 							url: 'https://www.example.ie/og-image-02.jpg',
 							width: 900,
 							height: 800,
-							alt: 'Og Image Alt Second'
+							alt: 'Og Image Alt Second',
 						},
 						{ url: 'https://www.example.ie/og-image-03.jpg' },
-						{ url: 'https://www.example.ie/og-image-04.jpg' }
+						{ url: 'https://www.example.ie/og-image-04.jpg' },
 					],
-					site_name: 'https://thearoma.club'
+					site_name: 'https://thearoma.club',
 				}}
 				twitter={{
 					handle: '@thearoma.club',
 					site: url,
-					cardType: 'summary_large_image'
+					cardType: 'summary_large_image',
 				}}
 			/>
 			<Header />

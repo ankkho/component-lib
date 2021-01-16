@@ -1,14 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Box from './index';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 
-storiesOf('Box', module)
+import CartItemDetails from './index';
+
+storiesOf('Ecommerce - Cart Item Details', module)
 	.addDecorator(withSmartKnobs())
 	.addDecorator(withKnobs)
-	.add('default', () => (
-		<Box title='Rating'>
-			<p>5 star rating</p>
-		</Box>
-	));
+	.add('default', () => <CartItemDetails removeClicked={() => {}} />);

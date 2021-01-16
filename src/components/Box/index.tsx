@@ -1,20 +1,16 @@
 import React from 'react';
 
 interface BoxProps {
-	title: string;
-	details: React.ReactElement;
+	title: React.ReactElement | string;
+	children: React.ReactElement;
 	className?: string;
 	editClicked?: Function;
 	disabled?: boolean;
 }
 
-const Box: React.FC<BoxProps> = ({
-	title,
-	details,
-	className,
-	editClicked,
-	disabled,
-}) => {
+const Box = (props: React.PropsWithChildren<BoxProps>) => {
+	const { title, children, className, editClicked, disabled } = props;
+
 	const linkText = disabled ? 'Edit' : 'Cancel';
 
 	return (
@@ -30,7 +26,7 @@ const Box: React.FC<BoxProps> = ({
 					</a>
 				)}
 			</div>
-			<div className='pt-3 text-gray-800'>{details}</div>
+			<div className='pt-3 text-gray-800'>{children}</div>
 		</div>
 	);
 };
