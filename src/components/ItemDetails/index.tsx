@@ -92,7 +92,7 @@ const ItemDetails = ({
 	setActiveVariant,
 	activeVariantDetails,
 	activeVariant,
-	disableButton = false
+	disableButton = false,
 }) => {
 	const {
 		name,
@@ -101,7 +101,7 @@ const ItemDetails = ({
 		attributes: { nodes: attributes },
 		variations: { nodes: variations },
 		galleryImages: { nodes: images },
-		reviews: { nodes: allReviews }
+		reviews: { nodes: allReviews },
 	} = productDetails;
 
 	const { mediaItemUrl, altText } = images[0];
