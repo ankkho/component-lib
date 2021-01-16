@@ -1,5 +1,5 @@
-import { Carousel } from '../../components';
-import { RadioAndCheckboxInput, outOfStockText } from '../../utils/common';
+import { Carousel } from '..';
+import { RadioAndCheckboxInput, outOfStockText } from '../../../utils/common';
 
 const Box = ({ title, details, className }) => (
 	<div className={`border p-2 bg-white ${className}`}>

@@ -1,4 +1,4 @@
-import { getDiscountPer, DiscountBox } from '../../utils/common';
+import { getDiscountPer, DiscountBox } from '../../../utils/common';
 
 interface variations {
 	onSale: boolean;

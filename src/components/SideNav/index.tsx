@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { LoaderIcon } from '../../utils/common';
+import { LoaderIcon } from '../../../utils/common';
 
 const activeClass = ({ link }) => {
 	if (typeof window === 'undefined') return null;

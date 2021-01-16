@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 
-import { LoaderIcon } from '../../utils/common';
-import config from '../../config';
+import { LoaderIcon } from '../../../utils/common';
+import config from '../../../config';
 import Header from '../Header';
 
 const { siteName, url } = config;

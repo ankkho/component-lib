@@ -1,4 +1,6 @@
-interface props {
+import React from 'react';
+
+export interface BoxProps {
 	title: string;
 	details: React.ReactElement;
 	className?: string;
@@ -6,12 +8,12 @@ interface props {
 	disabled?: boolean;
 }
 
-const Box: React.SFC<props> = ({
+export const Box: React.FC<BoxProps> = ({
 	title,
 	details,
 	className,
 	editClicked,
-	disabled
+	disabled,
 }) => {
 	const linkText = disabled ? 'Edit' : 'Cancel';
 
@@ -32,5 +34,3 @@ const Box: React.SFC<props> = ({
 		</div>
 	);
 };
-
-export default Box;
