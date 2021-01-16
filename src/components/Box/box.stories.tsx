@@ -1,16 +1,10 @@
-// import React from 'react';
-// import { Story, Meta } from '@storybook/react/types-6-0';
-// import {Box, BoxProps} from './index';
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import Box from './index';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 
-// export default {
-//   title: 'Box',
-//   component: Box,
-// } as Meta;
-
-// const Template: Story<BoxProps> = (args) => <Box {...args} />;
-
-// export const  Default = Template.bind({})
-// Default.args = {
-//   title:"Account created!", 
-//   details: <p>sample</p>
-// }
+storiesOf('Box', module)
+	.addDecorator(withSmartKnobs())
+	.addDecorator(withKnobs)
+	.add('default', () => <Box title='Rating' details={<p>5 star rating</p>} />);

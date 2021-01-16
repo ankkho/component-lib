@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface BoxProps {
+interface BoxProps {
 	title: string;
 	details: React.ReactElement;
 	className?: string;
@@ -8,7 +8,7 @@ export interface BoxProps {
 	disabled?: boolean;
 }
 
-export const Box: React.FC<BoxProps> = ({
+const Box: React.FC<BoxProps> = ({
 	title,
 	details,
 	className,
@@ -34,3 +34,5 @@ export const Box: React.FC<BoxProps> = ({
 		</div>
 	);
 };
+
+export default Box;

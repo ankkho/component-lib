@@ -1,20 +1,15 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import {Alert, AlertProps} from './index';
+import { storiesOf } from '@storybook/react';
+import Alert from './index';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 
-export default {
-  title: 'Alert',
-  component: Alert,
-} as Meta;
-
-const Template: Story<AlertProps> = (args) => <Alert {...args} />;
-
-export const  Default = Template.bind({})
-Default.args = {
-  title:"Account created!", message:"Account created successfully!" 
-}
-
-export const  Error = Template.bind({})
-Error.args = {
-  title:"Error!", type:"error", message:"Account was not created!" 
-}
+storiesOf('Alert', module)
+	.addDecorator(withSmartKnobs())
+	.addDecorator(withKnobs)
+	.add('default', () => (
+		<Alert title='Account created!' message='Account created successfully!' />
+	))
+	.add('error', () => (
+		<Alert title='Error!' type='error' message='Account was not created!' />
+	));

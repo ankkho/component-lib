@@ -52,6 +52,7 @@
 		"@storybook/preset-create-react-app": "^2.1.1",
 		"@storybook/react": "^6.1.14",
 		"babel-loader": "^8.1.0",
-		"react-docgen-typescript-loader": "^3.7.2"
+		"react-docgen-typescript-loader": "^3.7.2",
+		"storybook-addon-smart-knobs": "^6.0.2"
 	}
 }

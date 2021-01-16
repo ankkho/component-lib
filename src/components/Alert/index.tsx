@@ -1,17 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 
-export interface AlertProps {
+interface AlertProps {
 	type?: string;
 	title: string;
 	message: string;
 }
 
-export const Alert: React.FC<AlertProps> = ({
-	type = 'success',
-	title,
-	message,
-}) => {
+const Alert: React.FC<AlertProps> = ({ type = 'success', title, message }) => {
 	const color = type === 'success' ? 'teal' : 'red';
 	const [visible, setVisible] = useState(true);
 
@@ -40,3 +36,5 @@ export const Alert: React.FC<AlertProps> = ({
 		)
 	);
 };
+
+export default Alert;
