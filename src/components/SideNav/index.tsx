@@ -3,21 +3,21 @@ import Link from 'next/link';
 
 import { LoaderIcon } from '../../../utils/common';
 
-const activeClass = (link: string) => {
+const activeClass = (href: string) => {
 	if (typeof window === 'undefined') return null;
 	return (
-		window.location.pathname === link &&
+		window.location.pathname === href &&
 		'text-blue-700 font-semibold bg-blue-100'
 	);
 };
 
-interface links {
+export interface links {
 	label: string;
-	link: string;
+	href: string;
 	key?: string;
 }
 
-interface containerProps {
+export interface containerProps {
 	title: string;
 	links: links[];
 }
@@ -28,26 +28,22 @@ interface SideNavProps {
 	otherLinks: links[];
 }
 
-const ReturnLink: React.FC<links> = ({
+export const ReturnLink: React.FC<links> = ({
 	label,
-	link,
+	href,
 	key,
-}): React.ReactElement => {
-	console.log('.....', { link, label, key: `link-${key}` });
-
-	return (
-		<Link href={link} key={`link-${key}`}>
-			<a>
-				<div
-					className={`font-semibold cursor-pointer pl-5 p-3 capitalize ${activeClass(
-						{ link }
-					)} hover:bg-blue-100`}>
-					{label}
-				</div>
-			</a>
-		</Link>
-	);
-};
+}): React.ReactElement => (
+	<Link href={href} key={`link-${key}`}>
+		<a>
+			<div
+				className={`font-semibold cursor-pointer pl-5 p-3 capitalize ${activeClass(
+					{ href }
+				)} hover:bg-blue-100`}>
+				{label}
+			</div>
+		</a>
+	</Link>
+);
 
 const ContainerBox: React.FC<{ details: containerProps; key: string }> = ({
 	details,
@@ -58,9 +54,9 @@ const ContainerBox: React.FC<{ details: containerProps; key: string }> = ({
 		<div className='border-b' key={key}>
 			<h3 className='font-bold text-gray-500 uppercase p-5'>{title}</h3>
 			{links.map((val, linkKey) => {
-				const { link, label } = val;
+				const { href, label } = val;
 
-				return <ReturnLink link={link} label={label} key={`${linkKey}`} />;
+				return <ReturnLink href={href} label={label} key={`${linkKey}`} />;
 			})}
 		</div>
 	);
@@ -78,8 +74,8 @@ const SideNav = (props: React.PropsWithChildren<SideNavProps>) => {
 					<ContainerBox details={val} key={`${key}-box`} />
 				))}
 				{otherLinks.map((val, key) => {
-					const { link, label } = val;
-					return <ReturnLink link={link} label={label} key={`${key}`} />;
+					const { href, label } = val;
+					return <ReturnLink href={href} label={label} key={`${key}`} />;
 				})}
 			</div>
 			<div className='w-full'>{loading ? <LoaderIcon /> : children}</div>

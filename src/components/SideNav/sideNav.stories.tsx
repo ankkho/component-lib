@@ -8,11 +8,11 @@ import SideNav from './index';
 const otherLinks = [
 	{
 		label: 'my orders',
-		link: '/account/orders',
+		href: '/account/orders',
 	},
 	{
 		label: 'active orders',
-		link: '/account/active-order',
+		href: '/account/active-order',
 	},
 ];
 
@@ -22,11 +22,11 @@ const containerLinks = [
 		links: [
 			{
 				label: 'profile',
-				link: '/account',
+				href: '/account',
 			},
 			{
 				label: 'address',
-				link: '/account/address',
+				href: '/account/address',
 			},
 		],
 	},
