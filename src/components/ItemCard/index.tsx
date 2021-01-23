@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+
 import { getDiscountPer, DiscountBox } from '../../../utils/common';
 
 interface variations {
@@ -11,6 +13,7 @@ interface variations {
 interface props {
 	key?: string;
 	details: {
+		currencySymbol: string;
 		slug: string;
 		name: string;
 		onSale: boolean;
@@ -28,6 +31,7 @@ interface props {
 
 const ItemCard: React.FC<props> = ({ key, details }) => {
 	const {
+		currencySymbol = 'INR',
 		slug,
 		name,
 		onSale,
@@ -50,29 +54,25 @@ const ItemCard: React.FC<props> = ({ key, details }) => {
 
 	const discountPer = getDiscountPer(salePrice, regularPrice);
 
-	const itemSelected = () => {
-		window.location.href = `/${slug}`;
-	};
-
 	return (
-		<div
-			key={key}
-			onClick={itemSelected}
-			className='cursor-pointer md:shadow-lg antialiased md:ml-0 md:m-2 border bg-white w-1/2 md:w-64'>
-			<img src={mediaItemUrl} alt={altText} className='w-full p-5' />
-			<div className='p-2'>
-				<DiscountBox
-					amtWithDis={salePrice}
-					discount={onSale}
-					discountPer={discountPer}
-					amtWithoutDis={regularPrice}
-				/>
-				<p className='text-md font-semibold pt-1 text-gray-700'>{name}</p>
-				<p className='text-gray-600 pt-3'>
-					{averageRating} ratings and {reviewCount} reviews
-				</p>
+		<Link key={key} href={`/${slug}`}>
+			<div className='cursor-pointer md:shadow-lg antialiased md:ml-0 md:m-2 border bg-white w-1/2 md:w-64'>
+				<img src={mediaItemUrl} alt={altText} className='w-full p-5' />
+				<div className='p-2'>
+					<DiscountBox
+						currencySymbol={currencySymbol}
+						amtWithDis={salePrice}
+						onSale={onSale}
+						discountPer={discountPer}
+						amtWithoutDis={regularPrice}
+					/>
+					<p className='font-semibold pt-1 text-gray-700'>{name}</p>
+					<p className='text-gray-600 pt-3 font-normal'>
+						{averageRating} ratings and {reviewCount} reviews
+					</p>
+				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 

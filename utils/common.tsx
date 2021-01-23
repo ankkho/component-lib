@@ -1,6 +1,13 @@
+import React from 'react';
 import Loader from 'react-loader-spinner';
 
-// const returnNumberFromString = (val) => parseInt(val.split('&nbsp;')[1], 0);
+interface discountBoxProps {
+	discountPer: number;
+	onSale: boolean;
+	amtWithDis: number;
+	amtWithoutDis: number;
+	currencySymbol: string;
+}
 
 const getDiscountPer = (salePrice: number, regularPrice: number): number => {
 	if (salePrice && regularPrice) {
@@ -88,28 +95,31 @@ const LoaderIcon = () => (
 	</div>
 );
 
-const DiscountBox = ({ discountPer, discount, amtWithDis, amtWithoutDis }) => (
+const DiscountBox: React.FC<discountBoxProps> = ({
+	discountPer,
+	onSale = false,
+	amtWithDis,
+	amtWithoutDis,
+	currencySymbol = 'INR',
+}) => (
 	<div className='flex flex-wrap text-center'>
-		{discount && (
+		{onSale && (
 			<>
 				<span
 					className='text-red-800 md:bg-red-700 md:rounded-full p-2 text-xs md:text-white md:mr-2 h-8'
 					dangerouslySetInnerHTML={{ __html: `${discountPer} % Off` }}
 				/>
+				<p className='line-through float-left text-gray-700 md:border-l mt-1 pt-0 p-2'>
+					{amtWithoutDis}
+				</p>
 				<p
-					className='line-through float-left text-gray-700 md:border-l mt-2 pt-0 p-2'
-					dangerouslySetInnerHTML={{ __html: amtWithoutDis }}
-				/>
+					className={`md:text-2xl font-extrabold text-blue-700 ${
+						onSale && 'md:border-l pl-2 md:mt-0'
+					}`}>
+					{onSale ? amtWithDis : amtWithoutDis}
+				</p>
 			</>
 		)}
-		<p
-			className={`md:text-2xl mt-2 font-extrabold text-blue-700 ${
-				discount && 'md:border-l pl-2 md:mt-0'
-			}`}
-			dangerouslySetInnerHTML={{
-				__html: discount ? amtWithDis : amtWithoutDis,
-			}}
-		/>
 	</div>
 );
 
