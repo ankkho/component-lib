@@ -2,11 +2,11 @@ import React from 'react';
 import Loader from 'react-loader-spinner';
 
 interface discountBoxProps {
-	discountPer: number;
+	discountPer?: number;
 	onSale: boolean;
-	amtWithDis: number;
-	amtWithoutDis: number;
-	currencySymbol: string;
+	salePrice?: number;
+	regularPrice: number;
+	currencySymbol?: string;
 }
 
 const getDiscountPer = (salePrice: number, regularPrice: number): number => {
@@ -98,8 +98,8 @@ const LoaderIcon = () => (
 const DiscountBox: React.FC<discountBoxProps> = ({
 	discountPer,
 	onSale = false,
-	amtWithDis,
-	amtWithoutDis,
+	salePrice,
+	regularPrice,
 	currencySymbol = 'INR',
 }) => (
 	<div className='flex flex-wrap text-center'>
@@ -110,13 +110,13 @@ const DiscountBox: React.FC<discountBoxProps> = ({
 					dangerouslySetInnerHTML={{ __html: `${discountPer} % Off` }}
 				/>
 				<p className='line-through float-left text-gray-700 md:border-l mt-1 pt-0 p-2'>
-					{amtWithoutDis}
+					{regularPrice}
 				</p>
 				<p
 					className={`md:text-2xl font-extrabold text-blue-700 ${
-						onSale && 'md:border-l pl-2 md:mt-0'
+						onSale && 'md:border-l pl-2'
 					}`}>
-					{onSale ? amtWithDis : amtWithoutDis}
+					{onSale ? salePrice : regularPrice}
 				</p>
 			</>
 		)}

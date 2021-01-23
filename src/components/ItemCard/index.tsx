@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { getDiscountPer, DiscountBox } from '../../../utils/common';
+import { DiscountBox } from '../../../utils/common';
 
 interface variations {
 	onSale: boolean;
-	regularPrice: number;
-	salePrice: number;
+	discountPer?: number;
+	salePrice?: number;
 	price: number;
 }
 
@@ -23,8 +23,8 @@ interface props {
 		averageRating: number;
 		featured?: boolean;
 		price: number;
-		salePrice: number;
-		regularPrice: number;
+		salePrice?: number;
+		discountPer?: number;
 		variations: variations[];
 	};
 }
@@ -39,20 +39,10 @@ const ItemCard: React.FC<props> = ({ key, details }) => {
 		image: { mediaItemUrl, altText },
 		averageRating,
 		variations,
+		price,
+		salePrice,
+		discountPer,
 	} = details;
-
-	const saleDetails = variations.filter((val) => {
-		const { onSale } = val;
-		if (onSale) return val;
-	});
-	const nonSaleDetails = variations[0];
-	const priceDetails = saleDetails.length ? saleDetails[0] : nonSaleDetails;
-
-	const { salePrice, regularPrice } = priceDetails
-		? priceDetails
-		: { salePrice: 0, regularPrice: 0 };
-
-	const discountPer = getDiscountPer(salePrice, regularPrice);
 
 	return (
 		<Link key={key} href={`/${slug}`}>
@@ -61,10 +51,10 @@ const ItemCard: React.FC<props> = ({ key, details }) => {
 				<div className='p-2'>
 					<DiscountBox
 						currencySymbol={currencySymbol}
-						amtWithDis={salePrice}
+						salePrice={salePrice}
 						onSale={onSale}
 						discountPer={discountPer}
-						amtWithoutDis={regularPrice}
+						regularPrice={price}
 					/>
 					<p className='font-semibold pt-1 text-gray-700'>{name}</p>
 					<p className='text-gray-600 pt-3 font-normal'>

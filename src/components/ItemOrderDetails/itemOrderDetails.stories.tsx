@@ -8,12 +8,22 @@ storiesOf('Ecommerce - Order details', module)
 	.addDecorator(withSmartKnobs())
 	.addDecorator(withKnobs)
 	.add('default', () => (
-		<ItemOrderDetails
-			onClick={() => {
-				console.log('clicked');
-			}}
-			name='realme watch S'
-			orderId={123123123}
-			dateCompleted='Wed, Jan 20'
-		/>
+		<div className="flex">
+			<ItemOrderDetails
+				onClick={() => {
+					console.log('clicked');
+				}}
+				name='realme watch S'
+				orderId={123123123}
+				dateCompleted='Wed, Jan 20'
+			/>
+			<ItemOrderDetails
+				onClick={() => {
+					console.log('clicked');
+				}}
+				name='realme watch S'
+				orderId={123123123}
+				dateCompleted='Wed, Jan 20'
+			/>
+		</div>
 	));
