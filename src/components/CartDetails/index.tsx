@@ -26,7 +26,7 @@ const PriceDetails: React.FC<PriceDetailsProps> = ({
 	<div className=''>
 		<div className='flex justify-between text-semibold'>
 			<div>
-				<p className='p-2'>Total Items</p>
+				<p className='p-2'>Total Item(s)</p>
 				<p className='p-2'>Total Amount</p>
 				<p className='p-2'>CGST</p>
 				<p className='p-2'>SGST</p>

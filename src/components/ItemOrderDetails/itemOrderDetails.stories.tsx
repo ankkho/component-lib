@@ -8,7 +8,7 @@ storiesOf('Ecommerce - Order details', module)
 	.addDecorator(withSmartKnobs())
 	.addDecorator(withKnobs)
 	.add('default', () => (
-		<div className="flex">
+		<>
 			<ItemOrderDetails
 				onClick={() => {
 					console.log('clicked');
@@ -25,5 +25,5 @@ storiesOf('Ecommerce - Order details', module)
 				orderId={123123123}
 				dateCompleted='Wed, Jan 20'
 			/>
-		</div>
+		</>
 	));

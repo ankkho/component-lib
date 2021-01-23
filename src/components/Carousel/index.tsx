@@ -1,26 +1,9 @@
+import React from 'react';
 import { useState } from 'react';
 import ItemsCarousel from 'react-items-carousel';
-import ItemCard from '../ItemCard';
 
-interface variations {
-	onSale: boolean;
-	regularPrice: number;
-	salePrice: number;
-	price: number;
-}
-interface details {
-	slug: string;
-	onSale: boolean;
-	productId?: number;
-	reviewCount: number;
-	image: { mediaItemUrl: string; altText: string };
-	averageRating: number;
-	featured?: boolean;
-	price: number;
-	salePrice: number;
-	regularPrice: number;
-	variations: variations[];
-}
+import ItemCard from '../ItemCard';
+import { productDetails } from '../ItemCard';
 
 interface images {
 	altText: string;
@@ -29,19 +12,17 @@ interface images {
 
 interface props {
 	itemPerSlide: number;
-	products?: details[];
+	products?: productDetails[];
 	images?: images[];
 	getActiveIndex?: Function;
 }
 
-const Carousel: React.SFC<props> = ({ itemPerSlide, products, images }) => {
+const Carousel: React.FC<props> = ({ itemPerSlide, products, images }) => {
 	const [activeItemIndex, setActiveItemIndex] = useState(0);
 	const chevronWidth = 40;
 
-	console.log(activeItemIndex);
-
 	return (
-		<div style={{ padding: `0 ${chevronWidth}px` }}>
+		<div style={{ padding: `0 ${chevronWidth}px` }} className='hidden md:block'>
 			<ItemsCarousel
 				infiniteLoop={true}
 				firstAndLastGutter={true}
@@ -54,12 +35,11 @@ const Carousel: React.SFC<props> = ({ itemPerSlide, products, images }) => {
 				chevronWidth={chevronWidth}>
 				{products &&
 					products.map((item, key) => (
-						<ItemCard key={`item-${key}`} details={item} />
+						<ItemCard key={`item-${key}`} productDetails={item} />
 					))}
 				{images &&
 					images.map((item, key) => {
 						const { altText, mediaItemUrl } = item;
-
 						return <img src={mediaItemUrl} alt={altText} key={key} />;
 					})}
 			</ItemsCarousel>

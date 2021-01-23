@@ -6,7 +6,7 @@ import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 import CartDetails from './index';
 
 const priceDetails = {
-	totalItems: 10.34,
+	totalItems: 1,
 	totalAmount: 2000,
 	cgst: 10,
 	sgst: 10,

@@ -25,23 +25,21 @@ const ItemOrderDetails: React.FC<props> = ({
 				/>
 			</div>
 			<div className='p-2 md:text-center'>
-				<div className='md:flex text-center pb-2'>
+				<div className='md:flex pb-2'>
 					<p className='break-all capitalize font-semibold'>{name}</p>
 					<p className='hidden md:block text-lg text-blue-700 pl-5 font-bold'>
 						$ 499
 					</p>
 				</div>
-				<div className='border-t text-center text-sm font-semibold md:flex pt-2'>
+				<div className='border-t text-sm font-semibold md:flex pt-2'>
 					{/* <p className='p-3'>Total Items: 1</p> */}
 					<p className='hidden md:block pl-0 p-2'>Order: #{orderId}</p>
-					<span className='p-2'>
-						<a
-							title='Rate and review this product'
-							className=' text-blue-700'
-							href='#'>
-							Rate and Review Product
-						</a>
-					</span>
+					<a
+						title='Rate and review this product'
+						className='text-blue-700 p-2'
+						href='#'>
+						Rate and Review Product
+					</a>
 					<p className='p-2 text-green-500'>Delivered on {dateCompleted}</p>
 				</div>
 			</div>

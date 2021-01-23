@@ -21,12 +21,12 @@ const details = {
 	featured: false,
 	price: 1000,
 	salePrice: 800,
-	regularPrice: 1000,
+	discountPer: 20,
 	variations: [
 		{
 			onSale: true,
-			regularPrice: 1000,
 			salePrice: 800,
+			discountPer: 20,
 			price: 1000,
 		},
 	],
@@ -37,8 +37,8 @@ storiesOf('Ecommerce - ItemCard', module)
 	.addDecorator(withKnobs)
 	.add('default', () => (
 		<div className='flex flex-wrap'>
-			<ItemCard key='1' details={details} />
-			<ItemCard key='1' details={details} />
-			<ItemCard key='1' details={details} />
+			<ItemCard key='1' productDetails={details} />
+			<ItemCard key='1' productDetails={details} />
+			<ItemCard key='1' productDetails={details} />
 		</div>
 	));

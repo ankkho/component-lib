@@ -17,7 +17,9 @@ const FAQs: React.FC<FaqProps> = ({ details }) => (
 				const { title, description } = val;
 				return (
 					<div className='mb-3 border rounded p-3' key={index}>
-						<b>{title}</b>
+						<span className='border-b pb-3'>
+							<b>{title}</b>
+						</span>
 						<p className='text-gray-700 pt-5'>{description}</p>
 					</div>
 				);

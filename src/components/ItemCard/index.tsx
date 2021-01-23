@@ -10,26 +10,28 @@ interface variations {
 	price: number;
 }
 
-interface props {
-	key?: string;
-	details: {
-		currencySymbol: string;
-		slug: string;
-		name: string;
-		onSale: boolean;
-		productId?: number;
-		reviewCount: number;
-		image: { mediaItemUrl: string; altText: string };
-		averageRating: number;
-		featured?: boolean;
-		price: number;
-		salePrice?: number;
-		discountPer?: number;
-		variations: variations[];
-	};
+export interface productDetails {
+	currencySymbol: string;
+	slug: string;
+	name: string;
+	onSale: boolean;
+	productId?: number;
+	reviewCount: number;
+	image: { mediaItemUrl: string; altText: string };
+	averageRating: number;
+	featured?: boolean;
+	price: number;
+	salePrice?: number;
+	discountPer?: number;
+	variations?: variations[];
 }
 
-const ItemCard: React.FC<props> = ({ key, details }) => {
+interface props {
+	key?: string;
+	productDetails: productDetails;
+}
+
+const ItemCard: React.FC<props> = ({ key, productDetails }) => {
 	const {
 		currencySymbol = 'INR',
 		slug,
@@ -42,7 +44,7 @@ const ItemCard: React.FC<props> = ({ key, details }) => {
 		price,
 		salePrice,
 		discountPer,
-	} = details;
+	} = productDetails;
 
 	return (
 		<Link key={key} href={`/${slug}`}>
