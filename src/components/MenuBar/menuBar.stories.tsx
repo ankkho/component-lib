@@ -30,7 +30,7 @@ const containerLinks = [
 	},
 	{
 		title: 'Bottomwear',
-		parentId: 1,
+		parentId: 2,
 		links: [
 			{
 				label: 'Jeans',
@@ -51,23 +51,253 @@ const containerLinks = [
 		],
 	},
 	{
-		title: 'Bottomwear',
-		parentId: 1,
+		title: 'Indian & Fusion Wear',
+		parentId: 2,
 		links: [
 			{
-				label: 'Jeans',
+				label: 'Kurtas & Suits',
 				href: '/account',
 			},
 			{
-				label: 'casual trousers',
+				label: 'Kurtis, Tunics & Tops',
 				href: '/account/address',
 			},
 			{
-				label: 'formal trousers',
+				label: 'Ethnic Wear',
 				href: '/account',
 			},
 			{
-				label: 'shorts',
+				label: 'Leggings, Salwars & Churidars',
+				href: '/account/address',
+			},
+			{
+				label: 'Skirts & Palazzos',
+				href: '/account/address',
+			},
+			{
+				label: 'Sarees',
+				href: '/account/address',
+			},
+			{
+				label: 'Dress Materials',
+				href: '/account/address',
+			},
+			{
+				label: 'Lehenga Cholis',
+				href: '/account/address',
+			},
+			{
+				label: 'Dupattas & Shawls',
+				href: '/account/address',
+			},
+		],
+	},
+	{
+		title: 'Indian & Fusion Wear',
+		parentId: 2,
+		links: [
+			{
+				label: 'Kurtas & Suits',
+				href: '/account',
+			},
+			{
+				label: 'Kurtis, Tunics & Tops',
+				href: '/account/address',
+			},
+			{
+				label: 'Ethnic Wear',
+				href: '/account',
+			},
+			{
+				label: 'Leggings, Salwars & Churidars',
+				href: '/account/address',
+			},
+			{
+				label: 'Skirts & Palazzos',
+				href: '/account/address',
+			},
+			{
+				label: 'Sarees',
+				href: '/account/address',
+			},
+			{
+				label: 'Dress Materials',
+				href: '/account/address',
+			},
+			{
+				label: 'Lehenga Cholis',
+				href: '/account/address',
+			},
+			{
+				label: 'Dupattas & Shawls',
+				href: '/account/address',
+			},
+		],
+	},
+	{
+		title: 'Indian & Fusion Wear',
+		parentId: 2,
+		links: [
+			{
+				label: 'Kurtas & Suits',
+				href: '/account',
+			},
+			{
+				label: 'Kurtis, Tunics & Tops',
+				href: '/account/address',
+			},
+			{
+				label: 'Ethnic Wear',
+				href: '/account',
+			},
+			{
+				label: 'Leggings, Salwars & Churidars',
+				href: '/account/address',
+			},
+			{
+				label: 'Skirts & Palazzos',
+				href: '/account/address',
+			},
+			{
+				label: 'Sarees',
+				href: '/account/address',
+			},
+			{
+				label: 'Dress Materials',
+				href: '/account/address',
+			},
+			{
+				label: 'Lehenga Cholis',
+				href: '/account/address',
+			},
+			{
+				label: 'Dupattas & Shawls',
+				href: '/account/address',
+			},
+		],
+	},
+	{
+		title: 'Indian & Fusion Wear',
+		parentId: 2,
+		links: [
+			{
+				label: 'Kurtas & Suits',
+				href: '/account',
+			},
+			{
+				label: 'Kurtis, Tunics & Tops',
+				href: '/account/address',
+			},
+			{
+				label: 'Ethnic Wear',
+				href: '/account',
+			},
+			{
+				label: 'Leggings, Salwars & Churidars',
+				href: '/account/address',
+			},
+			{
+				label: 'Skirts & Palazzos',
+				href: '/account/address',
+			},
+			{
+				label: 'Sarees',
+				href: '/account/address',
+			},
+			{
+				label: 'Dress Materials',
+				href: '/account/address',
+			},
+			{
+				label: 'Lehenga Cholis',
+				href: '/account/address',
+			},
+			{
+				label: 'Dupattas & Shawls',
+				href: '/account/address',
+			},
+		],
+	},
+	{
+		title: 'Indian & Fusion Wear',
+		parentId: 2,
+		links: [
+			{
+				label: 'Kurtas & Suits',
+				href: '/account',
+			},
+			{
+				label: 'Kurtis, Tunics & Tops',
+				href: '/account/address',
+			},
+			{
+				label: 'Ethnic Wear',
+				href: '/account',
+			},
+			{
+				label: 'Leggings, Salwars & Churidars',
+				href: '/account/address',
+			},
+			{
+				label: 'Skirts & Palazzos',
+				href: '/account/address',
+			},
+			{
+				label: 'Sarees',
+				href: '/account/address',
+			},
+			{
+				label: 'Dress Materials',
+				href: '/account/address',
+			},
+			{
+				label: 'Lehenga Cholis',
+				href: '/account/address',
+			},
+			{
+				label: 'Dupattas & Shawls',
+				href: '/account/address',
+			},
+		],
+	},
+	{
+		title: 'Indian & Fusion Wear',
+		parentId: 2,
+		links: [
+			{
+				label: 'Kurtas & Suits',
+				href: '/account',
+			},
+			{
+				label: 'Kurtis, Tunics & Tops',
+				href: '/account/address',
+			},
+			{
+				label: 'Ethnic Wear',
+				href: '/account',
+			},
+			{
+				label: 'Leggings, Salwars & Churidars',
+				href: '/account/address',
+			},
+			{
+				label: 'Skirts & Palazzos',
+				href: '/account/address',
+			},
+			{
+				label: 'Sarees',
+				href: '/account/address',
+			},
+			{
+				label: 'Dress Materials',
+				href: '/account/address',
+			},
+			{
+				label: 'Lehenga Cholis',
+				href: '/account/address',
+			},
+			{
+				label: 'Dupattas & Shawls',
 				href: '/account/address',
 			},
 		],
@@ -77,4 +307,4 @@ const containerLinks = [
 storiesOf('MenuBar', module)
 	.addDecorator(withSmartKnobs())
 	.addDecorator(withKnobs)
-	.add('default', () => <MenuBar links={containerLinks} />);
+	.add('desktop', () => <MenuBar links={containerLinks} activeParentId={2} />);
