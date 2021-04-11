@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-
 import { LoaderIcon } from '../../../utils/common';
+import { ShoppingCartIcon, UserGroupIcon,  ChartBarIcon, ReceiptTaxIcon, TagIcon, CogIcon, HomeIcon } from '@heroicons/react/outline';
+
+const iconClassNames = 'h-5 w-5 mr-5 text-white';
 
 const activeClass = (href: string) => {
 	if (typeof window === 'undefined') return null;
@@ -9,6 +11,18 @@ const activeClass = (href: string) => {
 		window.location.pathname === href &&
 		'text-blue-700 font-semibold bg-blue-100'
 	);
+};
+
+const iconMapper: any = {
+	orders: <ShoppingCartIcon className={iconClassNames} />,
+	users: <UserGroupIcon className={iconClassNames} />,
+	employees: <UserGroupIcon className={iconClassNames} />,
+	customers: <UserGroupIcon className={iconClassNames} />,
+	analytics: <ChartBarIcon className={iconClassNames} />,
+	invoices: <ReceiptTaxIcon className={iconClassNames} />,
+	products: <TagIcon className={iconClassNames} />,
+	settings: <CogIcon className={iconClassNames} />,
+	dashboard: <HomeIcon className={iconClassNames} />
 };
 
 export interface links {
@@ -36,10 +50,13 @@ export const ReturnLink: React.FC<links> = ({
 	<Link href={href} key={`link-${key}`}>
 		<a>
 			<div
-				className={`font-semibold cursor-pointer pl-5 p-3 capitalize ${activeClass(
+				className={`font-semibold text-gray-300 cursor-pointer pl-5 p-3 capitalize ${activeClass(
 					{ href }
-				)} hover:bg-blue-100`}>
-				{label}
+				)} hover:bg-sidebarHover`}>
+				<span className='flex'>
+					{iconMapper[label.toLowerCase()]}
+					{label}
+				</span>
 			</div>
 		</a>
 	</Link>
@@ -51,8 +68,8 @@ const ContainerBox: React.FC<{ details: containerProps; key: string }> = ({
 }) => {
 	const { title, links } = details;
 	return (
-		<div className='border-b' key={key}>
-			<h3 className='font-bold text-gray-500 uppercase p-5'>{title}</h3>
+		<div className='mb-10' key={key}>
+			<h3 className='font-bold text-gray-300 uppercase p-5'>{title}</h3>
 			{links.map((val, linkKey) => {
 				const { href, label } = val;
 
@@ -67,9 +84,7 @@ const SideNav = (props: React.PropsWithChildren<SideNavProps>) => {
 
 	return (
 		<div className='flex'>
-			<div
-				className='hidden md:block border bg-white mr-5 w-1/4 h-1/2'
-				style={{ height: '300px' }}>
+			<div className='hidden md:block border bg-sidebar mr-5 w-1/4 h-1/2 pb-3'>
 				{containerLinks.map((val, key) => (
 					<ContainerBox details={val} key={`${key}-box`} />
 				))}

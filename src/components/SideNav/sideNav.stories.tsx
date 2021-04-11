@@ -18,15 +18,40 @@ const otherLinks = [
 
 const containerLinks = [
 	{
-		title: 'account settings',
+		title: 'management',
 		links: [
 			{
-				label: 'profile',
-				href: '/account',
+				label: 'dashboard',
+				href: '/dashboard',
 			},
 			{
-				label: 'address',
-				href: '/account/address',
+				label: 'customers',
+				href: '/customers',
+			},
+			{
+				label: 'orders',
+				href: '/orders',
+			},
+			{
+				label: 'products',
+				href: '/products',
+			},
+			{
+				label: 'invoices',
+				href: '/invoices',
+			},
+		],
+	},
+	{
+		title: 'store',
+		links: [
+			{
+				label: 'employees',
+				href: '/employee',
+			},
+			{
+				label: 'settings',
+				href: '/settings',
 			},
 		],
 	},

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ChevronRight, ChevronDown } from 'heroicons-react';
 
 interface links {
 	label: string;
@@ -74,9 +73,9 @@ const MobileMenuBar: React.Component<linkWrapperProps> = ({ ...props }) => {
 					}}
 				/>
 				{showLinks ? (
-					<ChevronDown className='mt-3' />
+					'<'
 				) : (
-					<ChevronRight className='mt-3' />
+					'>'
 				)}
 			</div>
 			{showLinks && (
