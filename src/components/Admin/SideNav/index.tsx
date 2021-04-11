@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { LoaderIcon } from '../../../utils/common';
+import { LoaderIcon } from '../../../../utils/common';
 import { ShoppingCartIcon, UserGroupIcon,  ChartBarIcon, ReceiptTaxIcon, TagIcon, CogIcon, HomeIcon } from '@heroicons/react/outline';
 
 const iconClassNames = 'h-5 w-5 mr-5 text-white';
@@ -69,7 +69,7 @@ const ContainerBox: React.FC<{ details: containerProps; key: string }> = ({
 	const { title, links } = details;
 	return (
 		<div className='mb-10' key={key}>
-			<h3 className='font-bold text-gray-300 uppercase p-5'>{title}</h3>
+			<h3 className='font-semibold text-gray-300 uppercase p-5'>{title}</h3>
 			{links.map((val, linkKey) => {
 				const { href, label } = val;
 

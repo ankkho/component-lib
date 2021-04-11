@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 
-import SideNav from './index';
+import {SideNav, ActivityList} from './';
 
 const otherLinks = [
 	{
@@ -57,14 +57,58 @@ const containerLinks = [
 	},
 ];
 
-storiesOf('SideNav', module)
+const activityData = [
+	{
+		title: '10 April, 2021',
+		values: [
+			{
+				name: 'Signed Out',
+				time: '20:40 AM',
+				description: 'some random desc',
+			},
+			{
+				name: 'Created Invoice #132123',
+				time: '12:40 AM',
+				description: 'some random desc',
+			},
+			{
+				name: 'Signed In',
+				time: '12:40 AM',
+				description: 'some random desc',
+			},
+		],
+	},
+	{
+		title: '9 April, 2021',
+		values: [
+			{
+				name: 'Signed Out',
+				time: '20:40 AM',
+				description: 'some random desc',
+			},
+			{
+				name: 'Created Invoice #12312312',
+				time: '12:40 AM',
+				description: 'some random desc',
+			},
+			{
+				name: 'Signed In',
+				time: '12:40 AM',
+				description: 'some random desc',
+			},
+		],
+	},
+];
+
+storiesOf('Admin', module)
 	.addDecorator(withSmartKnobs())
 	.addDecorator(withKnobs)
-	.add('default', () => (
+	.add('SideNav', () => (
 		<SideNav
 			loading={false}
 			containerLinks={containerLinks}
 			otherLinks={otherLinks}>
 			<p>Page details goes here</p>
 		</SideNav>
-	));
+	))
+	.add('ActivityList', () => <ActivityList data={activityData} />);

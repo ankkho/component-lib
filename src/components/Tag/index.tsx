@@ -1,9 +1,10 @@
 import React from 'react';
 
 interface TagProps {
-	name: string;
+	type?: string;
+	name?: string;
 	className?: string;
-	text: string;
+	text?: string;
 }
 
 const textMapping = [{
@@ -25,8 +26,19 @@ const textMapping = [{
 	otherText: 'of receiving your order'
 }]
 
-const ReturnTag: React.FC<TagProps> = ({ className, name, text }) => {
-	const {imgName, boldText, otherText} = textMapping.filter(v => v.key === name)[0]
+const ReturnTag: React.FC<TagProps> = ({ type, className, name, text }) => {
+	if (type === 'form') {		
+		return (
+			<div
+				className={`${className} text-white text-sm font-medium py-1 px-2 rounded align-middle`}>
+				{text}
+			</div>
+		);
+	}
+
+	const { imgName, boldText, otherText } = textMapping.filter(
+		(v) => v.key === name
+	)[0];
 
 	return (
 		<div className={`m-2 p-5 ${className}`}>
@@ -40,6 +52,26 @@ const ReturnTag: React.FC<TagProps> = ({ className, name, text }) => {
 	);
 }
 
-const Tag: React.FC<TagProps> = ({ name, className = '', text }) => <ReturnTag className={className} text={text} name={name} />
+const Tag: React.FC<TagProps> = ({ type = '', name, className = '', text }) => (
+	<ReturnTag type={type} className={className} text={text} name={name} />
+);
 
-export default Tag;
+const StatusTags = {
+	pending: (
+		<Tag type='form' text='Pending' className='bg-red-200 text-red-800' />
+	),
+	completed: (
+		<Tag type='form' text='Completed' className='bg-green-200 text-green-800' />
+	),
+	new: <Tag type='form' text='New' className='bg-blue-200 text-blue-800' />,
+	inProcess: (
+		<Tag
+			type='form'
+			text='In-process'
+			className='bg-yellow-200 text-yellow-800'
+		/>
+	),
+	cancelled: <Tag type='form' text='Cancelled' className='bg-red-200 text-red-800' />
+};
+
+export { Tag, StatusTags };
