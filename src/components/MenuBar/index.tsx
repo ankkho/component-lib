@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/outline';
 
 interface links {
 	label: string;
@@ -37,9 +38,9 @@ const LinkWrapper: React.FC<linkWrapperProps> = ({ ...props }) => {
 						return (
 							<li>
 								<Link href={href} key={`link-${key}`}>
-									<a title={label} placeholder={label}>
+									<a title={label} className='capitalize' placeholder={label}>
 										<p
-											className='font-thin pl-8'
+											className='font-thin pl-10 hover:font-normal'
 											dangerouslySetInnerHTML={{
 												__html: label,
 											}}
@@ -73,9 +74,9 @@ const MobileMenuBar: React.Component<linkWrapperProps> = ({ ...props }) => {
 					}}
 				/>
 				{showLinks ? (
-					'<'
+					<ChevronDownIcon className='h-5 w-5' />
 				) : (
-					'>'
+					<ChevronRightIcon className='h-5 w-5' />
 				)}
 			</div>
 			{showLinks && (
@@ -86,7 +87,7 @@ const MobileMenuBar: React.Component<linkWrapperProps> = ({ ...props }) => {
 						return (
 							<li className='p-3'>
 								<Link href={href} key={`link-${key}`}>
-									<a title={label} placeholder={label}>
+									<a title={label} className='capitalize' placeholder={label}>
 										<p
 											className='font-thin pl-5'
 											dangerouslySetInnerHTML={{
