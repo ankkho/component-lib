@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 
-import {SideNav, ActivityList} from './';
+import { SideNav, ActivityList, Table } from './';
 
 const otherLinks = [
 	{
@@ -111,4 +111,5 @@ storiesOf('Admin', module)
 			<p>Page details goes here</p>
 		</SideNav>
 	))
-	.add('ActivityList', () => <ActivityList data={activityData} />);
+	.add('ActivityList', () => <ActivityList data={activityData} />)
+	.add('Table', () => <Table />)
