@@ -29,8 +29,16 @@ const Carousel: React.FC<props> = ({ itemPerSlide, products, images }) => {
 				requestToChangeActive={setActiveItemIndex}
 				activeItemIndex={activeItemIndex}
 				numberOfCards={itemPerSlide}
-				leftChevron={<button>{'<'}</button>}
-				rightChevron={<button>{'>'}</button>}
+				leftChevron={
+					<button className='border rounded-full p-3 hover:shadow'>
+						{'<'}
+					</button>
+				}
+				rightChevron={
+					<button className='border rounded-full p-3 hover:shadow'>
+						{'>'}
+					</button>
+				}
 				outsideChevron
 				chevronWidth={chevronWidth}>
 				{products &&
@@ -40,7 +48,13 @@ const Carousel: React.FC<props> = ({ itemPerSlide, products, images }) => {
 				{images &&
 					images.map((item, key) => {
 						const { altText, mediaItemUrl } = item;
-						return <img src={mediaItemUrl} alt={altText} key={key} />;
+						return (
+							<img
+								src={mediaItemUrl}
+								alt={altText}
+								key={`carousel-img-${key}`}
+							/>
+						);
 					})}
 			</ItemsCarousel>
 		</div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import Box from '../Card';
-
+import Card from '../Card';
+import { RupeeIcon } from '../../../utils/common'
 interface cardDetailsProps {
 	forCheckout: boolean;
 	address: string;
@@ -23,7 +23,7 @@ const PriceDetails: React.FC<PriceDetailsProps> = ({
 	totalPayable,
 	totalAmount,
 }) => (
-	<div className=''>
+	<>
 		<div className='flex justify-between text-semibold'>
 			<div>
 				<p className='p-2'>Total Item(s)</p>
@@ -33,16 +33,28 @@ const PriceDetails: React.FC<PriceDetailsProps> = ({
 			</div>
 			<div>
 				<p className='p-2'>{totalItems}</p>
-				<p className='p-2'>{totalAmount}</p>
-				<p className='p-2'>{cgst}</p>
-				<p className='p-2'>{sgst}</p>
+				<p className='p-2'>
+					{RupeeIcon}
+					{totalAmount}
+				</p>
+				<p className='p-2'>
+					{RupeeIcon}
+					{cgst}
+				</p>
+				<p className='p-2'>
+					{RupeeIcon}
+					{sgst}
+				</p>
 			</div>
 		</div>
 		<div className='border-t flex justify-between'>
 			<p className='p-2 font-bold text-xl'>Total Payable</p>
-			<p className='p-2 font-bold text-xl float-right'>{totalPayable}</p>
+			<p className='p-2 font-bold text-xl float-right'>
+				{RupeeIcon}
+				{totalPayable}
+			</p>
 		</div>
-	</div>
+	</>
 );
 
 const ChangeAddress = () => {};
@@ -56,7 +68,7 @@ const CartDetails: React.FC<cardDetailsProps> = ({
 	const btnText = forCheckout ? 'Proceed to Pay' : 'Place Order';
 
 	const title = (
-		<div className='flex justify-between'>
+		<>
 			<span>Shipping Address</span>
 			{!forCheckout && (
 				<a
@@ -66,19 +78,19 @@ const CartDetails: React.FC<cardDetailsProps> = ({
 					Change
 				</a>
 			)}
-		</div>
+		</>
 	);
 
 	return (
 		<div className='md:ml-5 md:flex-1'>
-			<Box className='mb-5' title={title}>
+			<Card className='mb-5' title="Shipping Address">
 				<div className='text-gray-700'>
 					<p>{address}</p>
 				</div>
-			</Box>
-			<Box className='w-full' title='Price Details'>
+			</Card>
+			<Card className='w-full' title='Price Details'>
 				<PriceDetails {...priceDetails} />
-			</Box>
+			</Card>
 			<div className='sticky bottom-0 mt-2 shadow'>
 				<button className='shadow-md bg-yellow-500 outline-none text-white font-semibold text-xl py-2 px-4 w-full h-16 rounded uppercase'>
 					{btnText}

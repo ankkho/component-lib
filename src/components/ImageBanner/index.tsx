@@ -30,7 +30,7 @@ const ImageCard: React.FC<BannerProps> = ({
 	/>
 );
 
-const Banner: React.FC<BannerProps> = ({ ...props }) => {
+const ImageBanner: React.FC<BannerProps> = ({ ...props }) => {
 	const { withLink, href = '#' } = props;
 	if (withLink) {
 		return (
@@ -43,4 +43,4 @@ const Banner: React.FC<BannerProps> = ({ ...props }) => {
 	return <ImageCard {...props} />;
 };
 
-export default Banner;
+export default ImageBanner;

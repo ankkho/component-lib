@@ -30,7 +30,7 @@ const ReturnTag: React.FC<TagProps> = ({ type, className, name, text }) => {
 	if (type === 'form') {		
 		return (
 			<div
-				className={`${className} text-white text-sm font-medium py-1 px-2 rounded align-middle`}>
+				className={`${className} text-white text-sm font-medium py-1 px-2 rounded align-middle w-auto inline-block`}>
 				{text}
 			</div>
 		);

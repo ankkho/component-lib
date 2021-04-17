@@ -16,6 +16,8 @@ const getDiscountPer = (salePrice: number, regularPrice: number): number => {
 	return 0;
 };
 
+const RupeeIcon = <span>&#x20B9;</span>;
+
 const outOfStockText = <p className='capitalize text-red-600'>Out of Stock</p>;
 
 const InputField = ({
@@ -106,16 +108,18 @@ const DiscountBox: React.FC<discountBoxProps> = ({
 		{onSale && (
 			<>
 				<span
-					className='text-red-800 md:bg-red-700 md:rounded-full p-2 text-xs md:text-white md:mr-2 h-8'
+					className='text-red-800 font-semibold text-sm pt-0 pl-0 p-2'
 					dangerouslySetInnerHTML={{ __html: `${discountPer} % Off` }}
 				/>
-				<p className='line-through float-left text-gray-700 md:border-l mt-1 pt-0 p-2'>
-					{regularPrice}
+				<p className='line-through text-gray-700 pt-0 p-2 flex'>
+					{RupeeIcon}
+					{`${regularPrice}`}
 				</p>
 				<p
-					className={`md:text-2xl font-extrabold text-blue-700 ${
-						onSale && 'md:border-l pl-2'
+					className={`md:text-xl font-semibold text-blue-700 ${
+						onSale && 'pl-2'
 					}`}>
+					{RupeeIcon}
 					{onSale ? salePrice : regularPrice}
 				</p>
 			</>
@@ -124,6 +128,7 @@ const DiscountBox: React.FC<discountBoxProps> = ({
 );
 
 export {
+	RupeeIcon,
 	DiscountBox,
 	LoaderIcon,
 	InputField,

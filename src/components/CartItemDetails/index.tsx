@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { DiscountBox } from '../../../utils/common';
+import { TrashIcon } from '@heroicons/react/outline';
+
+import { DiscountBox, RupeeIcon } from '../../../utils/common';
 
 interface variations {
 	onSale: boolean;
@@ -45,8 +47,8 @@ const CartItemDetails: React.FC<props> = ({ removeClicked, details }) => {
 
 	return (
 		<Link href={`/${slug}`}>
-			<div className='flex mb-3 border-b'>
-				<div className='sm:pb-3 pr-3 w-40'>
+			<div className='flex mb-3'>
+				<div className='sm:pb-3 pr-3 w-32'>
 					<img src={mediaItemUrl} alt={altText} />
 				</div>
 				<div className='w-full'>
@@ -63,14 +65,16 @@ const CartItemDetails: React.FC<props> = ({ removeClicked, details }) => {
 						/>
 						<div className='text-sm font-normal inline-flex mt-2 mb-2'>
 							<span className='pr-3'> Quantity: {quantity}</span>
-							<span className='text-gray-600'>Brand: {brandName}</span>
+							<span>
+								Brand: <span className='text-gray-600'>{brandName}</span>
+							</span>
 						</div>
 						<a
 							onClick={() => removeClicked()}
 							title='Remove this item'
 							className='text-red-700 text-lg text-bold float-right pb-3'
 							href='#'>
-							REMOVE
+							<TrashIcon className='h-5 w-5 mr-5' />
 						</a>
 					</div>
 				</div>

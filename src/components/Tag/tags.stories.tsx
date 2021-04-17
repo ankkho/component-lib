@@ -11,12 +11,10 @@ storiesOf('Tag', module)
 	.add('gurantee', () => <Tag name='gurantee' />)
 	.add('delivery', () => <Tag name='delivery' />)
 	.add('return 30 days', () => <Tag name='return30days' />)
-	.add('status', () => (
-		<div className='flex justify-evenly'>
-			{StatusTags.new}
-			{StatusTags.completed}
-			{StatusTags.pending}
-			{StatusTags.inProcess}
-			{StatusTags.cancelled}
-		</div>
-	));
+	.add('status - new', () => StatusTags.new)
+	.add('status - completed', () => StatusTags.completed)
+	.add('status - cancelled', () => StatusTags.cancelled)
+	.add('status - pending', () => StatusTags.pending)
+	.add('status - inProcess', () => StatusTags.inProcess)
+	.add('status - limited', () => StatusTags.limited)
+	.add('status - outOfStock', () => StatusTags.outOfStock);
