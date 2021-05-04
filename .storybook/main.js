@@ -6,6 +6,7 @@ module.exports = {
 		'@storybook/addon-notes/register',
 		'@storybook/addon-viewport',
 		'@storybook/addon-storysource',
+		'storybook-addon-react-docgen',
 	],
 	webpackFinal: async (config) => {
 		(config.module.rules = [

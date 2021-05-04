@@ -112,4 +112,4 @@ storiesOf('Admin', module)
 		</SideNav>
 	))
 	.add('ActivityList', () => <ActivityList data={activityData} />)
-	.add('Table', () => <Table />)
+	.add('Table', () => <Table />);

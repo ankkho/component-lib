@@ -47,7 +47,7 @@ const CartItemDetails: React.FC<props> = ({ removeClicked, details }) => {
 
 	return (
 		<Link href={`/${slug}`}>
-			<div className='flex mb-3'>
+			<div className='flex mb-3 border-b'>
 				<div className='sm:pb-3 pr-3 w-32'>
 					<img src={mediaItemUrl} alt={altText} />
 				</div>
