@@ -1,4 +1,5 @@
 import React from "react";
+import { PriceBox, NewTag } from "../../utils";
 
 const ItemCard = ({ isNew = false }) => {
   return (
@@ -12,7 +13,6 @@ const ItemCard = ({ isNew = false }) => {
           />
         </a>
         <div className="pt-3">
-          {isNew && <h3 className="text-sm text-red-600">New</h3>}
           <a
             href="http://google.com"
             title="Begum Wing Chair - India Paisleys Blue"
@@ -23,13 +23,8 @@ const ItemCard = ({ isNew = false }) => {
               Begum Wing Chair - India Paisleys Blue
             </p>
           </a>
-          <div className="flex mt-4">
-            <p className="font-bold text-sm">Rs 21,995</p>
-            <p className="text-sm text-gray-500 pl-3 line-through">Rs 27,995</p>
-            <p className="font-normal rounded-sm bg-red-600 text-white text-xs p-1 ml-3">
-              22% Off
-            </p>
-          </div>
+          <PriceBox />
+          <NewTag show={isNew} />
         </div>
       </div>
     </>
