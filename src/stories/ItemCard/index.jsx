@@ -1,7 +1,7 @@
 import React from "react";
 import { PriceBox, NewTag } from "../../utils";
 
-const ItemCard = ({ isNew = false }) => {
+const ItemCard = ({ isNew = true }) => {
   return (
     <>
       <div className="flex flex-col m-3">

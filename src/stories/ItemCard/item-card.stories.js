@@ -7,7 +7,7 @@ export default {
 };
 
 export const Primary = () => (
-  <div className="flex flex-row">
+  <div className="flex flex-wrap md:flex-nowrap">
     <ItemCard />
     <ItemCard />
     <ItemCard />

@@ -14,10 +14,10 @@ export const PriceBox = ({ offerPercentage, itemDetailsPage = false }) => {
       {offerPercentage && (
         <p
           className={
-            "font-normal rounded-sm bg-red-600 text-white p-1 ml-3 text-sm"
+            "font-normal rounded-sm bg-red-600 text-white p-1 ml-3 text-sm text-center"
           }
         >
-          ${offerPercentage}% Off
+          {offerPercentage}% Off
         </p>
       )}
     </div>
@@ -47,7 +47,7 @@ export const Accordian = () => {
           class="hs-accordion-toggle hs-accordion-active:text-blue-600 group py-3 inline-flex items-center justify-between gap-x-3 w-full font-semibold text-left text-gray-800 transition hover:text-gray-500 dark:hs-accordion-active:text-blue-500 dark:text-gray-200 dark:hover:text-gray-400"
           aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one"
         >
-          Accordion #1
+          Product Information & Care
           <svg
             class="hs-accordion-active:hidden hs-accordion-active:text-blue-600 hs-accordion-active:group-hover:text-blue-600 block w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
             width="16"
