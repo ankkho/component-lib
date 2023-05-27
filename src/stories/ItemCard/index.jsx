@@ -4,13 +4,15 @@ import { PriceBox, NewTag } from "../../utils";
 const ItemCard = ({ isNew = true }) => {
   return (
     <>
-      <div className="flex flex-col m-3">
+      <div className="m-2 md:w-60">
         <a href="http://google.com" target="_blank" rel="noreferrer">
-          <img
-            className="w-full h-auto rounded"
-            src="https://cdn.shopify.com/s/files/1/0601/1093/0098/products/8907605112324_1_600x.jpg?v=1646305804"
-            alt="Description"
-          />
+          <div className="md:shrink-0">
+            <img
+              className="w-full h-auto rounded mx-auto"
+              src="https://cdn.shopify.com/s/files/1/0601/1093/0098/products/8907605112324_1_600x.jpg?v=1646305804"
+              alt="Description"
+            />
+          </div>
         </a>
         <div className="pt-3">
           <a

@@ -1,18 +1,17 @@
-import React from "react";
 import { PriceBox, NewTag, Accordian } from "../../utils";
 
 const ItemDetailsCard = ({ isNew = true }) => {
   return (
     <>
-      <div className="flex flex-row sm:flex-wrap m-3 mx-auto">
-        <div className="w-full pb-5">
+      <div className="flex md:flex-row flex-col md:mr-3 m-0 mx-auto">
+        <div className="">
           <img
-            className="w-full h-auto rounded"
+            className="w-full h-auto"
             src="https://cdn.shopify.com/s/files/1/0601/1093/0098/products/8907605112324_1_600x.jpg?v=1646305804"
             alt="Description"
           />
         </div>
-        <div className="md:pl-7">
+        <div className="p-2">
           <p className="font-bold md:text-3xl sm:text-2xl">
             TEAL by Chumbak Sahara Desert Bedsheet - Queen size, 136TC, Dark
             Blue

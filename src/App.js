@@ -1,9 +1,23 @@
-import ItemDetailsCard from "./stories/ItemDetailsCard";
+import "preline";
+import ItemCard from "./stories/ItemCard";
 
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      <ItemDetailsCard />
-    </h1>
+    <div className="container mx-auto">
+      <div className="flex flex-wrap md:flex-row flex-col">
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+      </div>
+    </div>
   );
 }
