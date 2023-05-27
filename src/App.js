@@ -6,17 +6,6 @@ export default function App() {
     <div className="container mx-auto">
       <div className="flex flex-wrap md:flex-row flex-col">
         <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
       </div>
     </div>
   );
