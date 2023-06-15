@@ -1,10 +1,10 @@
 import React from "react";
 import { PriceBox, NewTag } from "../../utils";
 
-const ItemCard = ({ isNew = true }) => {
+const ProductCard = ({ isNew = true }) => {
   return (
     <>
-      <div className="m-2 md:w-60">
+      <div className="m-2 md:w-60 shadow rounded">
         <a href="http://google.com" target="_blank" rel="noreferrer">
           <div className="md:shrink-0">
             <img
@@ -14,7 +14,7 @@ const ItemCard = ({ isNew = true }) => {
             />
           </div>
         </a>
-        <div className="pt-3">
+        <div className="p-3">
           <a
             href="http://google.com"
             title="Begum Wing Chair - India Paisleys Blue"
@@ -33,4 +33,4 @@ const ItemCard = ({ isNew = true }) => {
   );
 };
 
-export default ItemCard;
+export default ProductCard;

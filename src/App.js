@@ -1,10 +1,10 @@
 import "preline";
-import Banner from "./stories/Banner";
+import ProductDetailsCard from "./stories/ProductDetailsCard";
 
 export default function App() {
   return (
-    <div className="flex flex-wrap">
-      <Banner />
+    <div className="flex flex-wrap container mx-auto">
+      <ProductDetailsCard />
     </div>
   );
 }
